@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/girisFragment">
+
+    <fragment
+        android:id="@+id/girisFragment"
+        android:name="com.example.tasarimcalismasi_ii.ui.fragment.GirisFragment"
+        android:label="fragment_giris"
+        tools:layout="@layout/fragment_giris" >
+        <action
+            android:id="@+id/kayitGecis"
+            app:destination="@id/kayitFragment" />
+        <action
+            android:id="@+id/anaSayfaGecis"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kayitFragment"
+        android:name="com.example.tasarimcalismasi_ii.ui.fragment.KayitFragment"
+        android:label="fragment_kayit"
+        tools:layout="@layout/fragment_kayit" >
+        <action
+            android:id="@+id/girisGecis"
+            app:destination="@id/girisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.tasarimcalismasi_ii.ui.fragment.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/geziOlusturGecis"
+            app:destination="@id/geziOlusturFragment" />
+        <action
+            android:id="@+id/cikisYap"
+            app:destination="@id/girisFragment" />
+        <action
+            android:id="@+id/anasayfadanProfile"
+            app:destination="@id/profilFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/geziOlusturFragment"
+        android:name="com.example.tasarimcalismasi_ii.ui.fragment.GeziOlusturFragment"
+        android:label="fragment_gezi_olustur"
+        tools:layout="@layout/fragment_gezi_olustur" >
+        <action
+            android:id="@+id/olusturdanGecisAnaSayfa"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.example.tasarimcalismasi_ii.ui.fragment.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" >
+        <action
+            android:id="@+id/profildenAnasayfaya"
+            app:destination="@id/anaSayfaFragment" />
+        <action
+            android:id="@+id/profildenGirise"
+            app:destination="@id/girisFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="anasayfaFragment"
+            type="com.example.tasarimcalismasi_ii.ui.fragment.AnaSayfaFragment" />
+        <variable
+            name="geziAdapter"
+            type="com.example.tasarimcalismasi_ii.ui.adapter.GeziAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_theme"
+        tools:context=".ui.fragment.AnaSayfaFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.20" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAnaSayfa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="31dp"
+            android:clickable="true"
+            android:onClick="@{() -> anasayfaFragment.fabTikla(fabAnaSayfa)}"
+            android:src="@drawable/gezi_ekle"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toStartOf="@+id/searchView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnCikisYap"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/app_theme" />
+
+        <Button
+            android:id="@+id/btnCikisYap"
+            android:layout_width="99dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="31dp"
+            android:backgroundTint="@color/white"
+            android:onClick="@{() -> anasayfaFragment.btnCikisTikla(btnCikisYap)}"
+            android:text="Profil"
+            android:textColor="@color/app_theme"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toStartOf="@+id/fabAnaSayfa"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="208dp"
+            android:layout_height="54dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/white"
+            android:queryHint="Ara"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fabAnaSayfa"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.576">
+
+        </SearchView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView2"
+            style="@style/custom_card_view_style"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAnaSayfa"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+                    android:adapter="@{geziAdapter}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

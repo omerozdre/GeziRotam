@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="geziOlusturFragment"
+            type="com.example.tasarimcalismasi_ii.ui.fragment.GeziOlusturFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_theme"
+        tools:context=".ui.fragment.GeziOlusturFragment">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="250dp"
+            android:layout_height="123dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_travel_explore_24"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewOlustur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabGeziOlustur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="@{() -> geziOlusturFragment.fabGeziOlusturTikla(fabGeziOlustur)}"
+            android:src="@drawable/geritus2"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewOlustur"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.20" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewOlustur"
+            style="@style/custom_card_view_style"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+                <EditText
+                    android:id="@+id/etGeziOlusturBasla"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableLeft="@drawable/location"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/app_theme"
+                    android:ems="10"
+                    android:hint="Başlama Yeri"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/etGeziOlusturBitis"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etGeziOlusturBitis"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableLeft="@drawable/location_off"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/app_theme"
+                    android:ems="10"
+                    android:hint="Bitiş Yeri"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/etGeziOlusturBasla"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etGeziBaslamaSaati"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableLeft="@drawable/saat"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/app_theme"
+                    android:ems="10"
+                    android:hint="Başlama Saati"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/etGeziTarih"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etGeziOlusturBasla" />
+
+                <EditText
+                    android:id="@+id/etGeziTarih"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableLeft="@drawable/takvim"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/app_theme"
+                    android:ems="10"
+                    android:hint="Gezi Tarihi"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/etGeziBaslamaSaati"
+                    app:layout_constraintTop_toBottomOf="@+id/etGeziOlusturBitis" />
+
+                <EditText
+                    android:id="@+id/etGeziUcret"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableLeft="@drawable/ucret"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/app_theme"
+                    android:ems="10"
+                    android:hint="Gezi Ücreti"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/etGeziiletisim"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etGeziBaslamaSaati" />
+
+                <EditText
+                    android:id="@+id/etGeziiletisim"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableLeft="@drawable/telephone_numara"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/app_theme"
+                    android:ems="10"
+                    android:hint="İletişim"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/etGeziUcret"
+                    app:layout_constraintTop_toBottomOf="@+id/etGeziTarih" />
+
+                <EditText
+                    android:id="@+id/etGeziKontenjan"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="56dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableLeft="@drawable/telephone_numara"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/app_theme"
+                    android:ems="10"
+                    android:hint="Kontenjan"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/etGeziiletisim" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="150dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etGeziUcret">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etGeziBilgi"
+                        android:layout_width="match_parent"
+                        android:layout_height="152dp"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="Bilgiler" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/geziOlusturButon"
+                    android:layout_width="357dp"
+                    android:layout_height="68dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/app_theme"
+                    android:onClick="@{() -> geziOlusturFragment.geziOlusturButtonKaydet(etGeziOlusturBasla.getText().toString ,etGeziOlusturBitis.getText().toString ,etGeziBaslamaSaati.getText().toString ,etGeziTarih.getText().toString ,etGeziUcret.getText().toString ,etGeziiletisim.getText().toString ,etGeziBilgi.getText().toString ,etGeziKontenjan.getText().toString)}"
+                    android:text="OLUŞTUR"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
